@@ -6,5 +6,5 @@ return array(
         'user/(:any)'   => 'user/index/$1',
         'login'     => 'index/login',
         'logout'    => 'index/logout',
-        'seminar/(:any)'    => 'seminar/index/$1',
+        'seminar/(\d+)'    => 'seminar/index/$1',
 );

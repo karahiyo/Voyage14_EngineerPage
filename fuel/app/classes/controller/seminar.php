@@ -18,4 +18,10 @@ class Controller_Seminar extends Controller
         return View_Smarty::forge('seminar/index',$data);
     }
 
+    public function action_new()
+    {
+
+        return View_Smarty::forge('index/404');
+    }
+
 }

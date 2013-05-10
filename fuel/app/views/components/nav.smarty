@@ -10,7 +10,7 @@
 <div class="nav-collapse collapse">
 <ul class="nav">
 <li {if isset($active) && $active==='mypage'}class="active"{/if}><a href="{Uri::create('user')}">MyPage</a></li>
-<li {if isset($active) && $active==='new'}class="active"{/if}><a href="{Uri::create('study/new')}">新規作成</a></li>
+<li {if isset($active) && $active==='new'}class="active"{/if}><a href="{Uri::create('seminar/new')}">新規作成</a></li>
 <li><a href="{Uri::create('logout')}">ログアウト</a></li>
 </ul>
 </div><!--/.nav-collapse -->
