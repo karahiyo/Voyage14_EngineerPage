@@ -12,6 +12,7 @@ class Controller_Index extends Controller
         public function action_login()
         {
             (Input::method()!=='POST') and Response::redirect('/');
+            (!\Security::check_token(Input::post('_token'))) and Response::redirect(\Uri::create('index'));
             $auth   = Auth::instance();
             if($auth->login(Input::post('user'),Input::post('password')))
             {
