@@ -1,0 +1,12 @@
+{extends file='base.smarty'}
+{block name="subheader"}
+<style>
+body {
+    padding-top: 60px;
+}
+</style>
+{/block}
+{block name="body"}
+{include file="components/nav.smarty"}
+
+{/block}
