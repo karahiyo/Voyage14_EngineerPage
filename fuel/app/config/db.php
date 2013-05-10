@@ -6,5 +6,12 @@
  */
 
 return array(
+	'default' => array(
+		'connection'  => array(
+			'dsn'        => 'mysql:host=localhost;dbname=voyage_engineer',
+			'username'   => 'root',
+			'password'   => 'arata',
+		),
+	),
 
 );
