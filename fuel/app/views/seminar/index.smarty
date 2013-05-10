@@ -1,0 +1,25 @@
+{extends file='base.smarty'}
+{block name="subheader"}
+<style>
+body {
+    padding-top: 60px;
+}
+</style>
+{/block}
+{block name="body"}
+{include file="components/nav.smarty"}
+<div class="container">
+    <div class="row">
+        <h1 class="text-info">第 {$seminar->id} 回勉強会 - {$seminar->title}</h1>
+        <h3 class="text-info">{$seminar->date}</h3>
+        <h4>準備するもの</h4>
+        <p class="text-success well well-small">{$seminar->requirements|nl2br}</p>
+        <h3 class="text-info">資料 - {$seminar->slides}</h3>
+        <h4>参考資料</h4>
+        <p class="text-success well well-small">{$seminar->references|nl2br}</p>
+        <h4>その他</h4>
+        <p class="text-success well well-samll">{$seminar->notes|nl2br}</p>
+        <a href="{Uri::create('user')}" class="btn">戻る</a>
+    </div>
+</div>
+{/block}
