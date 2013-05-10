@@ -9,7 +9,7 @@ class Controller_User_Index extends Controller_User_Base
 
 	public function action_index()
 	{
-            $seminar    = \Model_Seminar::find('all');
+            $seminar    = \Model_Seminar::find('all',array('order_by'=>array('id'=>'desc')));
             $data       = array(
                 'seminars'  => $seminar,
             );
