@@ -81,7 +81,7 @@ class Create
             {
                 $user   = \Model_User::forge();
                 $auth   = \Auth::instance();
-                $already    = \Model_User::find(array('username'=>$sample['username']));
+                $already    = \Model_User::find('all',array('where'=> array('username'=>$sample['username'])));
                 if($already) continue;
 
                 $user->set($sample);
