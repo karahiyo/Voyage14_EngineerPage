@@ -1,0 +1,43 @@
+{extends file='base.smarty'}
+{block name="subheader"}
+<style>
+body {
+    padding-top: 60px;
+}
+</style>
+{/block}
+{block name="body"}
+{include file="components/nav.smarty"}
+<div class="container">
+    <div class="row">
+        <form action="{Uri::create('user/edit')}" method="post">
+            <h3 class="text-info">現在のパスワード</h3>
+            <input type="password" name="password_current" />
+            {if isset($errors.password_current)}
+            <p class="text-error">{$errors.password_current}</p>
+            {/if}
+
+            <h3 class="text-info">新しいパスワード</h3>
+            <input type="password" name="password" />
+            {if isset($errors.password)}
+            <p class="text-error">{$errors.password}</p>
+            {/if}
+
+            <h3 class="text-info">新しいパスワード(確認)</h3>
+            <input type="password" name="password_confirm" />
+            {if isset($errors.password_confirm)}
+            <p class="text-error">{$errors.password_confirm}</p>
+            {/if}
+
+            <input type="hidden" name="_token" value="{Security::fetch_token()}"/>
+            <br />
+
+            <button class="btn btn-primary">変更する</button>
+            <a href="{Uri::create('user')}" class="btn">戻る</a>
+            <br />
+            <p class="text-warning">{Session::get_flash('errors')}</p>
+        
+        </form>
+    </div>
+</div>
+{/block}

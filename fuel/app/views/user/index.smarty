@@ -9,6 +9,11 @@ body {
 {block name="body"}
 {include file="components/nav.smarty" active='mypage'}
 <div class="container">
+    <div class="hero-unit">
+        <h2>{Auth::get_screen_name()}としてログインしています</h2>
+        <a href="{Uri::create('user/edit')}" class="btn btn-primary">パスワード変更はこちら</a>
+        <p class="text-success">{Session::get_flash('message')}</p>
+    </div>
     <div class="row">
         {foreach from=$seminars item=seminar}
         <div class="span5 well">
