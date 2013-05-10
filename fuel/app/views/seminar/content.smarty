@@ -1,0 +1,54 @@
+{extends file='base.smarty'}
+{block name="subheader"}
+<style>
+body {
+    padding-top: 60px;
+}
+textarea {
+    width:100%;
+}
+</style>
+{/block}
+{block name="body"}
+{include file="components/nav.smarty"}
+<div class="container">
+    <div class="row">
+        <form action="{Uri::create('seminar/confirm')}" method="POST">
+            <input type="hidden" name="seminar_id" value="{$seminar_id|default:null}" />
+            <h1 class="text-info">第 {Model_Seminar::count()+1} 回勉強会</h1>
+            <input type="text" name="title" placeholder='タイトル' value="{$seminar->title|default:null}" />
+            {if isset($errors.title)}
+            <p class="text-error">{$errors.title}</p>
+            {/if}
+            <h3>日程</h3>
+            <input type="date" name="date" value="{$seminar->date|default:null}" />
+            {if isset($errors.date)}
+            <p class="text-error">{$errors.date}</p>
+            {/if}
+            <h4>準備するもの</h4>
+            <textarea name="requirements" rows="10" cols="100" placeholder="環境とか本とか酒とか">{$seminar->requirements|default:null}</textarea>
+            {if isset($errors.requirements)}
+            <p class="text-error">{$errors.requirements}</p>
+            {/if}
+            <h3>資料へのリンク</h3>
+            <input type="text" name="slides" placeholder="URLを入力" value="{$seminar->slides|default:null}" />
+            {if isset($errors.slides)}
+            <p class="text-error">{$errors.slides}</p>
+            {/if}
+            <h4>参考資料</h4>
+            <textarea name="references" rows="10" cols="100" placeholder="あれば">{$seminar->references|default:null}</textarea>
+            {if isset($errors.references)}
+            <p class="text-error">{$errors.references}</p>
+            {/if}
+            <h4>その他</h4>
+            <textarea name="notes" rows="10" cols="100" placeholder="LTだれがやるとか">{$seminar->notes|default:null}</textarea>
+            {if isset($errors.notes)}
+            <p class="text-error">{$errors.notes}</p>
+            {/if}
+
+        <button class="btn btn-primary">確認する</button>
+        <a href="{Uri::create('user')}" class="btn">戻る</a>
+        </form>
+    </div>
+</div>
+{/block}
