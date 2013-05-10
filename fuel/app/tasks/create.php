@@ -47,14 +47,48 @@ class Create
 
         public static function sample_user()
         {
-            $user   = \Model_User::forge();
-            $auth   = \Auth::instance();
-            $already    = \Model_User::find(array('username'=>'arata'));
-            if($already) exit;
-            $user->username     = 'arata';
-            $user->email    = 'tarata43@yahoo.co.jp';
-            $user->password = $auth->hash_password('arataarata');
-            $user->save();
+            $sample_arr = array(
+                array(
+                    'username'  => 'beeEaMa',
+                    'email'     => '',
+                ),
+                array(
+                    'username'  => '46goma_goma',
+                    'email'     => '',
+                ),
+                array(
+                    'username'  => 'sinamon129',
+                    'email'     => '',
+                ),
+                array(
+                    'username'  => 'cosadn',
+                    'email'     => '',
+                ),
+                array(
+                    'username'  => 'blackstar240',
+                    'email'     => '',
+                ),
+                array(
+                    'username'  => 'A01saru',
+                    'email'     => '',
+                ),
+                array(
+                    'username'  => 'tana_ra',
+                    'email'     => '',
+                ),
+            );
+            foreach($sample_arr as $sample)
+            {
+                $user   = \Model_User::forge();
+                $auth   = \Auth::instance();
+                $already    = \Model_User::find(array('username'=>$sample['username']));
+                if($already) continue;
+
+                $user->set($sample);
+                $user->password = $auth->hash_password('hogehogehoge');
+                $user->save();
+
+            }
         }
 
         public static function sample()
