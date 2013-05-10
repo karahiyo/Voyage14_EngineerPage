@@ -30,4 +30,8 @@ class Controller_Index extends Controller
             $auth->logout();
             Response::redirect('/');
         }
+        public function action_404()
+        {
+            return View_Smarty::forge('index/404');
+        }
 }

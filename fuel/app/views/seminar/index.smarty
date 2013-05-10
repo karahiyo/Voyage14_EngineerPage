@@ -14,7 +14,7 @@ body {
         <h3 class="text-info">{$seminar->date}</h3>
         <h4>準備するもの</h4>
         <p class="text-success well well-small">{$seminar->requirements|nl2br}</p>
-        <h3 class="text-info">資料 - {$seminar->slides}</h3>
+        <h3 class="text-info"><a href="{$seminar->slides}" class="btn btn-info">資料へのリンク</a></h3>
         <h4>参考資料</h4>
         <p class="text-success well well-small">{$seminar->references|nl2br}</p>
         <h4>その他</h4>
