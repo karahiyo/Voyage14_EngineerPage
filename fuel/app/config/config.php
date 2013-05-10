@@ -80,8 +80,8 @@ return array(
 	/**
 	 * Localization & internationalization settings
 	 */
-	// 'language'           => 'en', // Default language
-	// 'language_fallback'  => 'en', // Fallback language when file isn't available for default language
+         'language'           => 'ja', // Default language
+         'language_fallback'  => 'en', // Fallback language when file isn't available for default language
 	// 'locale'             => 'en_US', // PHP set_locale() setting, null to not set
 
 	/**
@@ -117,7 +117,7 @@ return array(
 	 */
 	'security' => array(
 		// 'csrf_autoload'    => false,
-		// 'csrf_token_key'   => 'fuel_csrf_token',
+                 'csrf_token_key'   => '_token',
 		// 'csrf_expiration'  => 0,
 
 		/**
