@@ -1,0 +1,4 @@
+{extends file='base.smarty'}
+{block name="body"}
+
+{/block}

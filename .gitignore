@@ -13,4 +13,6 @@ build
 nbproject/
 .idea
 
-/fuel/app/config/crypt.php
+fuel/app/config/crypt.php
+fuel/app/config/development/*
+fuel/app/tmp/*

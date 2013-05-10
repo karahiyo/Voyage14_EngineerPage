@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Voyage14</title>
+</head>
+<body>
+{block name="body"}{/block}
+
+    
+</body>
+</html>
