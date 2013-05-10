@@ -6,12 +6,12 @@
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a class="brand" href="#">Project name</a>
+<a class="brand" href="/">Voyage</a>
 <div class="nav-collapse collapse">
 <ul class="nav">
-<li class="active"><a href="#">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#contact">Contact</a></li>
+<li class="active"><a href="{Uri::create('user')}">MyPage</a></li>
+<li><a href="{Uri::create('study/new')}">新規作成</a></li>
+<li><a href="{Uri::create('logout')}">ログアウト</a></li>
 </ul>
 </div><!--/.nav-collapse -->
 </div>

@@ -39,10 +39,11 @@ padding: 7px 9px;
 <div class="container">
 
 <form class="form-signin" action="{Uri::create('login')}" method="post">
-<h2 class="form-signin-heading">Please sign in</h2>
-<input type="text" class="input-block-level" name="user" placeholder="username">
-<input type="password" class="input-block-level" name="password" placeholder="password">
-<button class="btn btn-large btn-primary" type="submit">Sign in</button>
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <input type="text" class="input-block-level" name="user" placeholder="username">
+    <input type="password" class="input-block-level" name="password" placeholder="password">
+    <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+    <p class="text-error">{Session::get_flash('error')}</p>
 </form>
 </div> <!-- /container -->
 {/block}

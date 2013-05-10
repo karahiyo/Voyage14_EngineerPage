@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Voyage14</title>
-{Asset::css('bootstrap.min.css')}
+{Asset::css('bootstrap.css')}
 {block name="subheader"}{/block}
 </head>
 <body>
