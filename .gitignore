@@ -6,6 +6,7 @@ desktop.ini
 .buildpath
 .project
 .settings
+.htaccess
 *.tmproj
 fuel/app/logs/*/*/*
 fuel/app/cache/*/*
