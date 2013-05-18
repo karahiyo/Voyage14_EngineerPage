@@ -21,8 +21,8 @@ body {
             <h4 class="text-info">{$seminar->title}</h4>
             <p class="text-info">感想: 件</p>
             <p class="text-info">日程: {$seminar->date}</p>
-            <a href="{Uri::create(seminar)}/{$seminar->id}" class="btn btn-primary">詳細</a>
-            <a href="{Uri::create('seminar/edit')}/{$seminar->id}" class="btn btn-primary">編集</a>
+            <a href="{Uri::create(seminar)}/{$seminar->id}" class="btn btn-info">詳細</a>
+            <a href="{Uri::create('seminar/edit')}/{$seminar->id}" class="btn">編集</a>
         </div>
         {/foreach}
     </div>

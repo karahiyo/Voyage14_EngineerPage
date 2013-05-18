@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Voyage14</title>
 {Asset::css('bootstrap.css')}
+{Asset::css('flat-ui.css')}
 {Asset::js('jquery.js')}
 {block name="subheader"}{/block}
 </head>
