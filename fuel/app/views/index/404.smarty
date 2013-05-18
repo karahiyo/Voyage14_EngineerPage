@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <title>ページが見つかりません</title>
     {Asset::css('bootstrap.css')}
+    <style type="text/css">
+        img{
+            width:100%;
+        }
+        body{
+            background-color:black;
+        }
+        h1{
+            color:white;
+        }
+    </style>
 </head>
 <body>
-    <h1>404 not found</h1>
-    <p class="muted">かっこよくしたい</p>
-    <a href="{Uri::create('index')}" class="btn">戻る</a>
+<div class="container">
+    <div class="row-fluid">
+        <h1>404 not found</h1>
+        {Asset::img('404.png')}
+    </div>
+
+    <div class="row">
+    <a href="{Uri::create('index')}" class="btn btn-inverse">戻る</a>
+    </div>
+</div>
 </body>
 </html>
