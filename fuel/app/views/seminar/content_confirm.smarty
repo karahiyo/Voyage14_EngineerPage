@@ -15,7 +15,7 @@ textarea {
     <div class="row">
         <form action="{Uri::create('seminar/execute')}" method="POST">
             <input type="hidden" name="seminar_id" value="{$seminar_id|default:null}" />
-            <h1 class="text-info">第 {Model_Seminar::count()+1} 回勉強会</h1>
+            <h1 class="text-info">第 {$seminar->sem_number} 回勉強会</h1>
             <input type="text" name="title" value="{$seminar->title}" readonly/>
             <h3>日程</h3>
             <input type="date" name="date" value="{$seminar->date}" readonly/>

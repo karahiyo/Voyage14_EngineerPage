@@ -12,6 +12,8 @@ class Model_Seminar extends \Orm\Model
 		'references',
 		'created_at',
 		'updated_at',
+		'del_flg',
+		'sem_number',
 	);
 
 	protected static $_observers = array(

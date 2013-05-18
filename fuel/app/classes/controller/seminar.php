@@ -26,7 +26,14 @@ class Controller_Seminar extends Controller
     }
     public function action_edit($id)
     {
-        return View_Smarty::forge('seminar/content');
+        $data   = array();
+        $seminar= \Model_Seminar::find($id);
+        $data   = array(
+            'sem_cnt'       => $id,
+            'seminar_id'    => $id,
+            'seminar'       => $seminar,
+        );
+        return View_Smarty::forge('seminar/content',$data);
     }
     public function action_confirm()
     {
@@ -40,15 +47,21 @@ class Controller_Seminar extends Controller
         if(!$validation->run(Input::post()))
         {
             \View_Smarty::set_global('errors',$validation->error());
-            $data   = array('seminar'   => Input::post());
+            $data   = array(
+                'sem_cnt'   => $seminar_id,
+                'seminar_id'=> $seminar_id,
+                'seminar'   => Input::post(),
+            );
             return View_Smarty::forge('seminar/content',$data);
         }
 
         $seminar->set(Input::post());
-
         $data   = array(
+            'sem_cnt'   => $seminar_id,
+            'seminar_id'=> $seminar_id,
             'seminar'   => $seminar,
         );
+
         return View_Smarty::forge('seminar/content_confirm',$data);
     }
     public function action_execute()
