@@ -20,7 +20,9 @@ class Controller_Seminar extends Controller
 
     public function action_new()
     {
-        return View_Smarty::forge('seminar/content');
+        $data   = array();
+        $data['sem_cnt']    = \Model_Seminar::count(array('where'=>array('del_flg'=>0)))+1;
+        return View_Smarty::forge('seminar/content',$data);
     }
     public function action_edit($id)
     {
