@@ -12,6 +12,7 @@
 <li {if isset($active) && $active==='mypage'}class="active"{/if}><a href="{Uri::create('user')}">マイページ</a></li>
 <li {if isset($active) && $active==='new'}class="active"{/if}><a href="{Uri::create('seminar/new')}">新規作成-勉強会-</a></li>
 <li><a href="{Uri::create('task/new')}">新規作成-LT課題-</a></li>
+<li><a href="{Uri::create('wish/index')}">やりたいこと</a></li>
 <li><a href="{Uri::create('logout')}">ログアウト</a></li>
 </ul>
 </div><!--/.nav-collapse -->
