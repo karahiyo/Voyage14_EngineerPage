@@ -18,6 +18,9 @@ textarea {
     <div class="row">
         <form action="{Uri::create('seminar/execute')}" method="POST">
             <input type="hidden" name="seminar_id" value="{$seminar_id|default:null}" />
+            <input type="hidden" name="{Config::get('security.csrf_token_key')}" value="{Security::fetch_token()}" />
+            <input type="hidden" name="sem_number" value="{$seminar->sem_number}" />
+            <input type="hidden" name="del_flg" value="0" />
             <h1 class="text-info">第 {$seminar->sem_number} 回勉強会</h1>
             <input type="text" name="title" value="{$seminar->title}" readonly/>
             <h3>日程</h3>

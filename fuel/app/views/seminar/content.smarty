@@ -18,6 +18,7 @@ textarea {
     <div class="row">
         <form action="{Uri::create('seminar/confirm')}" method="POST">
             <input type="hidden" name="seminar_id" value="{$seminar_id|default:null}" />
+            <input type="hidden" name="sem_number" value="{$seminar->sem_number|default:$sem_cnt}" />
             <h1 class="text-info">第 {$seminar->sem_number|default:$sem_cnt} 回勉強会</h1>
             <input type="text" name="title" placeholder='タイトル' value="{$seminar->title|default:null}" />
             {if isset($errors.title)}

@@ -67,7 +67,7 @@ class Controller_Seminar extends Controller
     public function action_execute()
     {
 
-        if(Security::check_token())
+        if(!Security::check_token())
         {
             Session::set_flash('message','不正なページ遷移です');
             Response::redirect(Uri::create('user'));
@@ -86,6 +86,7 @@ class Controller_Seminar extends Controller
         }
         $input  = Input::post();
         $seminar->set(Input::post());
+        
         if($seminar->save())Session::set_flash('message','勉強会を保存しました');
         else Session::set_flash('message','勉強会の保存に失敗しました');
         Response::redirect(Uri::create('user'));
