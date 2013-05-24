@@ -1,0 +1,38 @@
+{extends file='base.smarty'}
+{block name="subheader"}
+<style>
+body {
+    padding-top: 60px;
+}
+input[type=text]{
+    width:100%;
+}
+textarea {
+    width:100%;
+}
+
+</style>
+{/block}
+{block name="body"}
+{include file="components/nav.smarty"}
+<div class="container">
+    <div class="row">
+         <form action="{Uri::create('wish/execute')}" method="POST">
+             <input type="hidden" name="wish_id" value="{$wish->id|default:null}" />
+             <input type="hidden" name="{Config::get('security.csrf_token_key')}" value="{Security::fetch_token()}" />
+            <h4>タイトル</h4>
+            <input type="text" name="title" placeholder='タイトル' value="{$wish->title|default:null}" readonly />
+            {if isset($errors.title)}
+            <p class="text-error">{$errors.title}</p>
+            {/if}
+            <h4>詳細</h4>
+            <textarea name="detail" rows="10" cols="100" placeholder="こんなこと勉強したいんだという熱い思い" readonly>{$wish->detail|default:null}</textarea>
+            {if isset($errors.detail)}
+            <p class="text-error">{$errors.detail}</p>
+            {/if}
+        <button class="btn btn-primary">作成する</button>
+        <a href="{Uri::create('wish')}" class="btn">戻る</a>
+        </form>
+    </div>
+</div>
+{/block}

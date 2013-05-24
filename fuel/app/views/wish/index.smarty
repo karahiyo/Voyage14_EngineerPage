@@ -1,0 +1,28 @@
+{extends file='base.smarty'}
+{block name="subheader"}
+<style>
+body {
+    padding-top: 60px;
+}
+</style>
+{/block}
+{block name="body"}
+{include file="components/nav.smarty"}
+<div class="container">
+    <div class="row">
+        <div class="hero-unit">
+            <h3 class="text-info">やりたい勉強会一覧</h3>
+            <p class="text-success">{Session::get_flash('message')}</p>
+            <a href="{Uri::create('wish/new')}" class="btn">新しく作る</a>
+        </div>
+    </div>
+    {foreach from=$wishs item=wish}
+        <div class="row well">
+            <h3 class="text-info">{$wish->title}</h3>
+            <h4 class="text-info">説明</h4>
+            <p>{$wish->detail|nl2br}</p>
+            <a class="btn btn-info" href="{Uri::create('wish/detail')}/{$wish->id}">詳細</a>
+        </div>
+    {/foreach}
+</div>
+{/block}
